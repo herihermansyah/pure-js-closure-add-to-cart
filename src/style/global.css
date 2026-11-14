@@ -1,0 +1,6 @@
+@import "./header.css";
+@import "./product-card.css";
+
+#main {
+  margin-top: 50px;
+}
