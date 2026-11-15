@@ -14,7 +14,7 @@ wrapperCard.setClass("wrapper-card");
 
 main.appendChild(wrapperCard.element);
 
-mockProduct.forEach((product) => {
+function renderProductCard(product) {
   // ========== product card ============
   const productCard = createElement("div");
   productCard.setClass("product-card");
@@ -44,6 +44,10 @@ mockProduct.forEach((product) => {
   productCard.element.appendChild(productTitle.element);
   productCard.element.appendChild(productDescription.element);
   productCard.element.appendChild(productButton.element);
+}
+
+mockProduct.forEach((product) => {
+  renderProductCard(product);
 });
 
 export { wrapperCard };
