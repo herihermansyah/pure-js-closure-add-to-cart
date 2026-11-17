@@ -1,13 +1,7 @@
 import createElement from "../utils/createElement.js";
+import products from "../service/productData.js";
 
 const main = document.getElementById("main");
-
-const mockProduct = Array.from({ length: 10 }, (_, index) => ({
-  id: index + 1,
-  title: `Product ${index + 1}`,
-  description: `Description for Product ${index + 1}`,
-  image: `https://via.placeholder.com/150?text=Product+${index + 1}`,
-}));
 
 const wrapperCard = createElement("div");
 wrapperCard.setClass("wrapper-card");
@@ -18,10 +12,11 @@ function renderProductCard(product) {
   // ========== product card ============
   const productCard = createElement("div");
   productCard.setClass("product-card");
+
   // ============ product image ============
   const productImage = createElement("img");
   productImage.setClass("product-image");
-  productImage.setAttribute("src", `${product.image}`);
+  productImage.setAttribute("src", `${product.thumbnail}`);
   productImage.setAttribute("alt", "Product Image");
   productImage.setAttribute("width", "200");
   productImage.setAttribute("height", "200");
@@ -33,6 +28,7 @@ function renderProductCard(product) {
   // ============ product description ============
   const productDescription = createElement("p");
   productDescription.setText(`${product.description}`);
+
   // ============  product button ===========
 
   const productButton = createElement("button");
@@ -46,7 +42,7 @@ function renderProductCard(product) {
   productCard.element.appendChild(productButton.element);
 }
 
-mockProduct.forEach((product) => {
+products.forEach((product) => {
   renderProductCard(product);
 });
 
