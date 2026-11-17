@@ -18,7 +18,7 @@ const navigation = [
 const wrapperNavigation = createElement("ul");
 wrapperNavigation.setClass("navigation");
 
-navigation.forEach((item) => {
+function renderNavigation(item) {
   const li = createElement("li");
   li.setClass("navigation-item");
   const a = createElement("a");
@@ -27,6 +27,10 @@ navigation.forEach((item) => {
   a.setAttribute("href", item.href);
   li.element.appendChild(a.element);
   wrapperNavigation.element.appendChild(li.element);
+}
+
+navigation.forEach((item) => {
+  renderNavigation(item);
 });
 
 header.appendChild(wrapperNavigation.element);
