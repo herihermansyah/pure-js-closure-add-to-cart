@@ -3,6 +3,9 @@ import getData from "./api.js";
 async function fetchProducts() {
   try {
     const response = await getData();
+    if (!response.ok) {
+      return [];
+    }
     const data = await response.json();
     return data.products;
   } catch (error) {
