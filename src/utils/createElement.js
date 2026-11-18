@@ -10,7 +10,11 @@ function createElement(tag) {
   function setAttribute(attribute, value) {
     element.setAttribute(attribute, value);
   }
-  return { element, setText, setClass, setAttribute };
+
+  function setEvent(attribute, callback) {
+    element.addEventListener(attribute, callback);
+  }
+  return { element, setText, setClass, setAttribute, setEvent };
 }
 
 export default createElement;
