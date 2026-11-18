@@ -1,8 +1,8 @@
-import getData from "./api.js";
+import fetchData from "./api.js";
 
 async function fetchProducts() {
   try {
-    const response = await getData();
+    const response = await fetchData("products");
     if (!response.ok) {
       return [];
     }
