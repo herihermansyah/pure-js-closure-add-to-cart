@@ -1,6 +1,7 @@
 export class CartManage {
   constructor() {
-    this.items = [];
+    const saved = localStorage.getItem("cart");
+    this.items = saved ? JSON.parse(saved) : [];
   }
 
   addToCart(product) {
@@ -16,6 +17,12 @@ export class CartManage {
         quantity: 1,
       });
     }
+
+    this.save();
+  }
+
+  save() {
+    localStorage.setItem("cart", JSON.stringify(this.items));
   }
 }
 
