@@ -1,6 +1,7 @@
 import createElement from "../utils/createElement.js";
 import products from "../service/productData.js";
 import { cartItems } from "../store/addToCart.js";
+import { userInterface } from "./ui/userInterface.js";
 
 const main = document.getElementById("main");
 
@@ -34,8 +35,13 @@ function renderProductCard(product) {
 
   const productButton = createElement("button");
   productButton.setText("Add to Cart");
+
   productButton.setEvent("click", () => {
-    (cartItems.addToCart(product), console.log(cartItems.items));
+    cartItems.addToCart(product);
+    userInterface.element.innerHTML = `
+      <p class="cart-text">Cart</p>
+      <p class="cart-length">${cartItems.items.length}</p>
+    `;
   });
 
   //   ============ pairing ============
