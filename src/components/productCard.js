@@ -1,5 +1,6 @@
 import createElement from "../utils/createElement.js";
 import products from "../service/productData.js";
+import { cartItems } from "../store/addToCart.js";
 
 const main = document.getElementById("main");
 
@@ -7,39 +8,6 @@ const wrapperCard = createElement("div");
 wrapperCard.setClass("wrapper-card");
 
 main.appendChild(wrapperCard.element);
-
-const productsList = products.map((item) => {
-  return {
-    id: item.id,
-    thumbnail: item.thumbnail,
-    title: item.title,
-    description: item.description,
-  };
-});
-
-// =========== add to cart ===========
-class Carts {
-  constructor() {
-    this.items = [];
-  }
-
-  addToCart(product) {
-    const isExisting = this.items.find((item) => item.id === product.id);
-
-    if (isExisting) {
-      isExisting.quantity += 1;
-    } else {
-      this.items.push({
-        ...product,
-        quantity: 1,
-      });
-    }
-  }
-}
-
-const cartItems = new Carts();
-
-// =========== add to cart ===========
 
 function renderProductCard(product) {
   // ========== product card ============
@@ -66,7 +34,9 @@ function renderProductCard(product) {
 
   const productButton = createElement("button");
   productButton.setText("Add to Cart");
-  productButton.setEvent("click", cartItems.addToCart(product));
+  productButton.setEvent("click", () => {
+    (cartItems.addToCart(product), console.log(cartItems.items));
+  });
 
   //   ============ pairing ============
   wrapperCard.element.appendChild(productCard.element);
@@ -76,6 +46,6 @@ function renderProductCard(product) {
   productCard.element.appendChild(productButton.element);
 }
 
-productsList.forEach((product) => renderProductCard(product));
+products.forEach((product) => renderProductCard(product));
 
 export { wrapperCard };
