@@ -1,0 +1,15 @@
+.container-navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.container-navigation-list {
+  list-style: none;
+}
+
+.container-navigation-link {
+  text-decoration: none;
+  color: black;
+}
