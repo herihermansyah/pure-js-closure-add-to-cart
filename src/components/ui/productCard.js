@@ -16,7 +16,7 @@ const main = document.getElementById("main");
 // container product card to style all of the card such as style
 // either display grid or display flex
 const containerCard = createElement("div");
-containerCard.setClass("container");
+containerCard.setClass("container-list-products");
 // ================== container product Card ==================
 
 main.appendChild(containerCard.element);
