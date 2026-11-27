@@ -6,7 +6,7 @@
   transform: translateX(50%);
   top: 100px;
   background-color: rgb(227, 227, 227);
-  /* display: none; */
+  display: none;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
