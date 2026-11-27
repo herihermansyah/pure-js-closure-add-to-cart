@@ -1,2 +1,3 @@
 import "./components/header.js";
-import "./components/productCard.js";
+import "./components/productList.js";
+import "./components/cartList.js"
