@@ -1,0 +1,38 @@
+.container-payment {
+  padding: 20px;
+  margin: 20px 0;
+  border-top: 1px solid #ccc;
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(227, 227, 227);
+}
+
+.container-payment-total-price,
+.container-payment-sub-total-price {
+  border-bottom: 1px solid #ccc;
+}
+
+.container-clear-all-cart {
+  background-color: red;
+  color: white;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.container-checkout-cart {
+  background-color: green;
+  color: white;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.container-payment-clear-button {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}
