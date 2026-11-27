@@ -1,6 +1,18 @@
 @import "./header.css";
 @import "./product-card.css";
+@import "./cart-card.css";
+@import "./navigation-menu.css";
+@import "./logo.css";
+@import "./cart-list.css";
+@import "./user-action.css";
 
-#main {
-  margin-top: 50px;
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
