@@ -1,0 +1,26 @@
+.container-user-action {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  right: 5px;
+  cursor: pointer;
+}
+
+.cart-length {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  color: greenyellow;
+  background-color: blueviolet;
+  border-radius: 100%;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.cart-text {
+  color: blue;
+}
